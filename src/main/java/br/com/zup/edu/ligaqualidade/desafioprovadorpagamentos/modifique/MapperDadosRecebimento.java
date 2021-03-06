@@ -1,12 +1,6 @@
 package br.com.zup.edu.ligaqualidade.desafioprovadorpagamentos.modifique;
 
 import br.com.zup.edu.ligaqualidade.desafioprovadorpagamentos.pronto.DadosRecebimento;
-import br.com.zup.edu.ligaqualidade.desafioprovadorpagamentos.pronto.DadosTransacao;
-import br.com.zup.edu.ligaqualidade.desafioprovadorpagamentos.pronto.MetodoPagamento;
-
-import java.math.BigDecimal;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
 public class MapperDadosRecebimento {
 
