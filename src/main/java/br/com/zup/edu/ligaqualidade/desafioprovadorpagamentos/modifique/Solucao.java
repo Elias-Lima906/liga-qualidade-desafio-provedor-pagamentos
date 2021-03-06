@@ -1,9 +1,17 @@
 package br.com.zup.edu.ligaqualidade.desafioprovadorpagamentos.modifique;
 
+import br.com.zup.edu.ligaqualidade.desafioprovadorpagamentos.pronto.DadosRecebimento;
+import br.com.zup.edu.ligaqualidade.desafioprovadorpagamentos.pronto.DadosTransacao;
+import br.com.zup.edu.ligaqualidade.desafioprovadorpagamentos.pronto.MetodoPagamento;
+
+import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 public class Solucao {
+
+
 
 	/**
 	 * 
@@ -32,10 +40,16 @@ public class Solucao {
 	 * É esperado que o retorno respeite a ordem de recebimento
 	 */
 	public static List<String[]> executa(List<String> infoTransacoes, List<String> infoAdiantamentos) {
-		
+
+		List<DadosRecebimento> recebimentos = ExecutorTransacao.executar(infoTransacoes,infoAdiantamentos);
+
+		//TODO implementar mapeamento dos dados recebimentos
+
 		return List.of(new String[][] { 
 					 {"pago","200","194","04/03/2021"} 					 
 					}); 
 	}
+
+
 
 }
