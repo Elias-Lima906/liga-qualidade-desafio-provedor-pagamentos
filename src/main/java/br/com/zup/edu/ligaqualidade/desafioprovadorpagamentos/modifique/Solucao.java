@@ -8,6 +8,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Solucao {
 
@@ -40,16 +41,9 @@ public class Solucao {
 	 * É esperado que o retorno respeite a ordem de recebimento
 	 */
 	public static List<String[]> executa(List<String> infoTransacoes, List<String> infoAdiantamentos) {
-
 		List<DadosRecebimento> recebimentos = ExecutorTransacao.executar(infoTransacoes,infoAdiantamentos);
-
-		//TODO implementar mapeamento dos dados recebimentos
-
-		return List.of(new String[][] { 
-					 {"pago","200","194","04/03/2021"} 					 
-					}); 
+		return recebimentos.stream().map(recebimento -> MapperDadosRecebimento.map(recebimento)).collect(Collectors.toList());
 	}
-
 
 
 }

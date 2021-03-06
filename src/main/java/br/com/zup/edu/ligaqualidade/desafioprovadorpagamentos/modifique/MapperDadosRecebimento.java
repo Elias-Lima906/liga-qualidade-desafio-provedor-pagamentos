@@ -21,8 +21,12 @@ public class MapperDadosRecebimento {
      * @param infoRecebimento
      * @return
      */
-    public static DadosTransacao map(String infoRecebimento){
-      //implementar
-        throw new UnsupportedOperationException();
+    public static String[] map(DadosRecebimento infoRecebimento){
+        String[] saida = new String[4];
+        saida[STATUS_INDEX] = infoRecebimento.status;
+        saida[VALOR_ORGINAL_INDEX] = infoRecebimento.valor.toString();
+        saida[VALOR_RECEBIDO_INDEX] = infoRecebimento.valorRecebido.toString();
+        saida[DATA_RECEBIMENTO_INDEX] = infoRecebimento.dataRecebimento.toString();
+        return saida;
     }
 }
